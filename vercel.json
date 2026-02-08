@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "name": "dropship-pro-backend",
+  "builds": [
+    {
+      "src": "server-with-auth.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server-with-auth.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "server-with-auth.js"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
